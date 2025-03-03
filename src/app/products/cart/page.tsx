@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState, AppDispatch } from '@/utils/redux/store/store'
 import { increaseQuantity, decreaseQuantity, removeFromCart, fetchStock } from '@/utils/redux/cartSlice'
+import Navbar from '@/components/atomics/navbar.module'
 
 
 export default function Cart() {
@@ -24,6 +25,8 @@ export default function Cart() {
 
 
     return (
+        <>
+        <Navbar />
         <div className='p-8 mt-16 flex flex-col justify-center items-center w-screen h-screen'>
             <h2 className='text-2xl font-bold mb-4'>Shopping Cart</h2>
             {
@@ -52,5 +55,6 @@ export default function Cart() {
                     </div>
             }
         </div>
+        </>
     )
 }

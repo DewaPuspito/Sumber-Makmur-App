@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { productSchema, ProductInput } from '@/utils/validator/product.schema'
 import { axiosInstance } from '@/utils/api/product.api'
 import Swal from 'sweetalert2'
+import Navbar from '../atomics/navbar.module'
 
 export default function AdminDashboard() {
     const [products, setProducts] = useState<ProductInput[] | null>(null)
@@ -68,6 +69,8 @@ export default function AdminDashboard() {
     }
 
     return (
+        <>
+        <Navbar/>
         <div className='w-screen min-h-screen p-6 bg-gray-100 mt-36'>
             <h1 className='text-2xl font-bold mb-4'>Sumber Makmur Dashboard</h1>
             <button onClick={() => openModal()} className='px-4 py-2 bg-blue-600 text-white rounded'>
@@ -133,5 +136,6 @@ export default function AdminDashboard() {
                 </div>
             )}
         </div>
+        </>
     )
 }
